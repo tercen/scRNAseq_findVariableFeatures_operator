@@ -5,8 +5,8 @@ library(tidyr)
 library(dplyr)
 library(tercen)
 
-options("tercen.workflowId" = "7d6077b7fa4df6315a718714de00346e")
-options("tercen.stepId"     = "e8df35d9-2f50-45e0-a192-671c49c34418")
+options("tercen.workflowId" = "dcdd9d2d6d74569ea6fd766d3a01c274")
+options("tercen.stepId"     = "f0126fda-e4ba-4e13-8ae2-de391d96a48a")
 
 getOption("tercen.workflowId")
 getOption("tercen.stepId")
@@ -17,10 +17,20 @@ count_matrix <- ctx$as.matrix()
 
 dec <- trendVar(count_matrix)
 
-output <- tibble(.ri = 0:(nrow(count_matrix) - 1),
+variance_pvalues <- testVar(dec$vars, dec$trend(dec$vars), dec$df2)
+variance_logged_pvalues <- -log10(variance_pvalues)
+
+output <- tibble(.ri = as.numeric(0:(nrow(count_matrix) - 1)),
                  mean_expression = dec$means,
                  variance = dec$vars,
-                 trend = dec$trend(dec$means))
+                 trend = dec$trend(dec$means),
+                 variance_pvalues,
+                 variance_logged_pvalues,
+                 variance_rank = as.numeric(dense_rank(variance))) %>%
+  mutate(variance_rank = max(variance_rank) - variance_rank + 1,
+         FDR = p.adjust(variance_pvalues))
+
+
 
 ctx$addNamespace(output) %>%
   ctx$save()
