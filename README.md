@@ -1,34 +1,34 @@
-# Introduction
+# scRNA-seq feature selection operator
 
-This is a template repository.
+##### Description
+`scRNA-seq feature selection` models the variance of the expression of each gene and outputs the variance and variance-related metrics to perform feature (cell) selection for downstream analysis.
 
-Use this template repository during the first step of developing a tercen operator (in R) on github.
+##### Usage
 
-An overview of steps for developing an operator are:
+Input projection|.
+---|---
+`y-axis`              | numeric, normalized count data, per cell 
+`column names`        | character, cell ID
+`row names`           | character, gene ID
 
-1. create a github repo
-2. install tercen_studio
-3. login to tercen_studio
-4. git clone the newly created repo
-5. start developing in R in tercen_studio
-6. add R packages to the repo
-7. push to the github repo
-8. go to tercen and install the operator
+Output relations|.
+---|---
+`mean_expression`         | numeric, mean expression of a gene across all cells 
+`variance`                | numeric, variance of expression of a gene across all cells
+`trend`                   | numeric, expected variance of a gene given it's expression level
+`variance_pvalues`        | numeric, p-value of observed variance
+`variance_logged_pvalues` | numeric, minus logged-10 of p-value
+`variance_rank`           | numeric, rank of observed variance (1 is highest variance)
+`FDR`                     | numeric, False Discovery Rate of observed variance.
 
-For step 1, when creating the repo on github, you will notice the option to use a template repository, choose the `templateR_operator` repository and select it as the template repository.
 
-After creation, you now have a new repository with all the convenient files for making a new operator (in R) for tercen.
 
-Use `tercen_studio` to clone the new repository and start programming in `tercen_studio`
+##### Details
+The operator uses the QC worklfow described in the corresponding chapter of the ["Orchestrating Single-Cell Analysis"](https://osca.bioconductor.org/feature-selection.html) book. For this it uses the _scRNAseq_ BioConductor package.
 
-it includes the skeleton files 
+#### References
+Amezquita, et. al. ["Orchestrating single-cell analysis with BioConductor"](https://www.nature.com/articles/s41592-019-0654-x), Nature Methods (2019)
 
-* `main.R`
-* `workspace.R`
-* `operator.json`
-* `README_template.md`
-* `doc` directory
+##### See Also
 
-please remember to change the `README_template.md` to  `README.template.md`
-
-inside the `doc` there is a `dev_commands.md` file which contains useful development command lines.
+#### Examples
