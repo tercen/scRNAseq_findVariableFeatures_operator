@@ -11,7 +11,7 @@ Input projection|.
 `column names`        | character, cell ID
 `row names`           | character, gene ID
 
-Output relations|.
+Output relations|
 ---|---
 `mean_expression`         | numeric, mean expression of a gene across all cells 
 `variance`                | numeric, variance of expression of a gene across all cells
