@@ -1,5 +1,5 @@
 {
-  "name": "scRNA-seq feature selection metrics",
+  "name": "testVar",
   "description": "Return the metrics to select features in scRNA-seq data",
   "tags": ["genomics", "scRNA-seq", "feature selectionx"],
   "authors": ["tercen"],
