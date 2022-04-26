@@ -1,9 +1,9 @@
 {
   "name": "testVar",
-  "description": "Return the metrics to select features in scRNA-seq data",
-  "tags": ["genomics", "scRNA-seq", "feature selectionx"],
+  "description": "Test for significantly large variances in scRNA-seq data",
+  "tags": ["omics", "scRNA-seq", "feature selection"],
   "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/template_operator"],
+  "urls": ["https://github.com/tercen/testVar_operator"],
   "properties": []
 }
 
