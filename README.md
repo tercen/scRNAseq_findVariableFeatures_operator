@@ -1,6 +1,7 @@
 # scRNA-seq feature selection operator
 
 ##### Description
+
 `scRNA-seq feature selection` models the variance of the expression of each gene and outputs the variance and variance-related metrics to perform feature (cell) selection for downstream analysis.
 
 ##### Usage
@@ -11,7 +12,7 @@ Input projection|.
 `column names`        | character, cell ID
 `row names`           | character, gene ID
 
-Output relations|
+Output relations|.
 ---|---
 `mean_expression`         | numeric, mean expression of a gene across all cells 
 `variance`                | numeric, variance of expression of a gene across all cells
@@ -22,13 +23,10 @@ Output relations|
 `FDR`                     | numeric, False Discovery Rate of observed variance.
 
 
-
 ##### Details
-The operator uses the QC worklfow described in the corresponding chapter of the ["Orchestrating Single-Cell Analysis"](https://osca.bioconductor.org/feature-selection.html) book. For this it uses the _scRNAseq_ BioConductor package.
 
-#### References
+The operator uses the QC workflow described in the corresponding chapter of the ["Orchestrating Single-Cell Analysis"](https://osca.bioconductor.org/feature-selection.html) book. For this it uses the _scRNAseq_ BioConductor package.
+
+##### References
+
 Amezquita, et. al. ["Orchestrating single-cell analysis with BioConductor"](https://www.nature.com/articles/s41592-019-0654-x), Nature Methods (2019)
-
-##### See Also
-
-#### Examples

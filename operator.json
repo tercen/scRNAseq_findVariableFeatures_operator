@@ -1,5 +1,5 @@
 {
-  "name": "testVar",
+  "name": "scRNA-seq feature selection",
   "description": "Test for significantly large variances in scRNA-seq data",
   "tags": ["omics", "scRNA-seq", "feature selection"],
   "authors": ["tercen"],
