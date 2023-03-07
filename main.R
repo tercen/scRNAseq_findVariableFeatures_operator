@@ -25,7 +25,8 @@ obj <- FindVariableFeatures(
 
 HVFInfo(obj) %>%
   as_tibble() %>%
-  rename(dispersion = ends_with("variance"), dispersion.scaled = matches("variance.standardized")) %>%
+  rename(dispersion = ends_with("variance"),
+         dispersion.scaled = matches("variance.standardized")) %>%
   mutate(.ri = as.integer(rownames(obj))) %>%
   mutate(
     dispersion_rank = as.double(dense_rank(desc(dispersion))),

@@ -4,7 +4,7 @@
     {
       "kind": "ColumnSchema",
       "name": "ds1..gene_id",
-      "type": "int32"
+      "type": "double"
     }
   ]
 }
