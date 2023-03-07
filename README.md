@@ -1,4 +1,4 @@
-# scRNA-seq feature selection operator
+# scRNA-seq feature selection
 
 ##### Description
 
@@ -9,24 +9,24 @@
 Input projection|.
 ---|---
 `y-axis`              | numeric, normalized count data, per cell 
-`column names`        | character, cell ID
-`row names`           | character, gene ID
+`columns`        | character, cell ID
+`rows`           | character, gene ID
 
 Output relations|.
 ---|---
-`mean_expression`         | numeric, mean expression of a gene across all cells 
-`variance`                | numeric, variance of expression of a gene across all cells
-`trend`                   | numeric, expected variance of a gene given it's expression level
-`variance_pvalues`        | numeric, p-value of observed variance
-`variance_logged_pvalues` | numeric, minus logged-10 of p-value
-`variance_rank`           | numeric, rank of observed variance (1 is highest variance)
-`FDR`                     | numeric, False Discovery Rate of observed variance.
+`mean`         | numeric, mean expression of a gene across all cells 
+`dispersion`                | numeric, variance of expression of a gene across all cells
+`dispersion.scaled`                   | numeric, scaled variance or dispersion values
+`dispersion_rank`           | numeric, rank of observed variance (1 is highest variance)
+`dispersion.scaled_rank`           | numeric, rank of observed scaled variance (1 is highest variance)
 
 
 ##### Details
 
-The operator uses the QC workflow described in the corresponding chapter of the ["Orchestrating Single-Cell Analysis"](https://osca.bioconductor.org/feature-selection.html) book. For this it uses the _scRNAseq_ BioConductor package.
+The operator uses the `Seurat` R package and the preprocessing workflow described in the ["package website"](https://satijalab.org/seurat/).
 
 ##### References
 
-Amezquita, et. al. ["Orchestrating single-cell analysis with BioConductor"](https://www.nature.com/articles/s41592-019-0654-x), Nature Methods (2019)
+> Hao, Y., Hao, S., Andersen-Nissen, E., Mauck, W. M., Zheng, S., Butler, A., ... & Satija, R. (2021). Integrated analysis of multimodal single-cell data. Cell, 184(13), 3573-3587.
+
+[Link to Seurat reference](https://doi.org/10.1016/j.cell.2021.04.048)

@@ -1,10 +1,30 @@
 {
-  "name": "scRNA-seq feature selection",
-  "description": "Test for significantly large variances in scRNA-seq data",
-  "tags": ["omics", "scRNA-seq", "feature selection"],
+  "name": "scRNAseq Feature Selection",
+  "description": "Find the most variable features (genes) in scRNA-seq data",
+  "tags": ["omics", "scRNAseq", "data preprocessing"],
   "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/testVar_operator"],
-  "properties": []
+  "urls": ["https://github.com/tercen/scRNAseq_findVariableFeatures_operator"],
+  "properties": [
+    {
+      "kind": "EnumeratedProperty",
+      "name": "selection.method",
+      "defaultValue": "vst",
+      "values": ["vst", "mean.var.plot", "dispersion"],
+      "description": "How to choose top variable features. See Seurat documentation."
+    },
+    {
+    "kind": "DoubleProperty",
+    "name": "nfeatures",
+    "defaultValue": 2000,
+    "description": "Number of features to select as top variable features."
+  },
+    {
+    "kind": "DoubleProperty",
+    "name": "loess.span",
+    "defaultValue": 0.3,
+    "description": "Loess span parameter used when fitting the variance-mean relationship."
+  }
+  ]
 }
 
 
