@@ -1,0 +1,35 @@
+{
+  "kind": "TableSchema",
+  "columns": [
+    {
+      "kind": "ColumnSchema",
+      "name": "ds2.mean",
+      "type": "double"
+    },
+    {
+      "kind": "ColumnSchema",
+      "name": "ds2.dispersion",
+      "type": "double"
+    },
+    {
+      "kind": "ColumnSchema",
+      "name": "ds2.dispersion.scaled",
+      "type": "double"
+    },
+    {
+      "kind": "ColumnSchema",
+      "name": ".ri",
+      "type": "int32"
+    },
+    {
+      "kind": "ColumnSchema",
+      "name": "ds2.dispersion_rank",
+      "type": "double"
+    },
+    {
+      "kind": "ColumnSchema",
+      "name": "ds2.dispersion.scaled_rank",
+      "type": "double"
+    }
+  ]
+}
