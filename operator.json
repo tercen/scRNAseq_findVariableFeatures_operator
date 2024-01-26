@@ -1,6 +1,6 @@
 {
   "name": "scRNAseq Feature Selection",
-  "description": "Find the most variable features (genes) in scRNA-seq data",
+  "description": "Finds the most variable features (genes) in single-cell RNA sequencing data.",
   "tags": [
     "omics",
     "sc-RNA-seq",
