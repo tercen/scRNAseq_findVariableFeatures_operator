@@ -85,6 +85,55 @@
         ]
       }
     ],
-    "outputSpecsV2": []
+    "outputSpecsV2": [
+      {
+        "kind": "OperatorJoinSpec",
+        "joinOperators": [
+          {
+            "kind": "JoinOperator",
+            "joinType": "left",
+            "leftPair": {
+              "kind": "ColumnPair",
+              "lColumns": [
+                "Row"
+              ],
+              "rColumns": [
+                "Row"
+              ]
+            },
+            "rightRelation": {
+              "kind": "TableRelation",
+              "attributes": [
+                {
+                  "kind": "Attribute",
+                  "name": "mean",
+                  "type": "double"
+                },
+                {
+                  "kind": "Attribute",
+                  "name": "dispersion",
+                  "type": "double"
+                },
+                {
+                  "kind": "Attribute",
+                  "name": "dispersion.scaled",
+                  "type": "double"
+                },
+                {
+                  "kind": "Attribute",
+                  "name": "dispersion_rank",
+                  "type": "double"
+                },
+                {
+                  "kind": "Attribute",
+                  "name": "dispersion.scaled_rank",
+                  "type": "double"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
   }
 }
