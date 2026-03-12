@@ -73,7 +73,7 @@
               {
                 "kind": "MetaFactor",
                 "name": "Y-Axis",
-                "type": "numeric",
+                "type": "double",
                 "description": "Expression values",
                 "ontologyMapping": "measurement",
                 "crosstabMapping": "y",
